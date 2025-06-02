@@ -7,7 +7,6 @@ function App() {
   const [content, setContent] = useState("");
   const [editIndex, setEditIndex] = useState(null);
 
-  // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 3;
 
@@ -61,7 +60,6 @@ function App() {
     saveToStorage(updated);
   };
 
-  // Pagination logic
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
@@ -105,7 +103,7 @@ function App() {
         </div>
       ))}
 
-      {/* Pagination Controls */}
+      
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, i) => (
           <button
